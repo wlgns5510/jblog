@@ -57,6 +57,7 @@ public class UserController {
 		if(authUser != null) {	//로그인성공
 			System.out.println("로그인 성공");
 			session.setAttribute("authUser", authUser);
+			System.out.println(authUser);
 			return "redirect:/";
 		}
 		else {

@@ -9,7 +9,8 @@ import com.javaex.vo.UserVo;
 @Repository
 public class UserDao {
 
-	@Autowired SqlSession sqlSession;
+	@Autowired 
+	SqlSession sqlSession;
 	
 ////회원가입////////////////////////////////////////////////////////////////////////////
 	public int userInsert(UserVo userVo) {

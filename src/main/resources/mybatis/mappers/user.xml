@@ -16,7 +16,8 @@
 	<select id="getUser" parameterType="UserVo" resultType="UserVo">
 		<![CDATA[
 		
-			select userNo,
+			select id,				   
+				   userNo,
 				   userName,
 				   joindate
 			from users
