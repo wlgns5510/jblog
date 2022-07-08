@@ -17,4 +17,19 @@
 			
 		]]>
 	</select>
+	
+	<!-- id로 내블로그 가져오기 -->
+	<select id="getMyBlog" parameterType="String" resultType="BlogVo">
+		<![CDATA[
+		
+			select u.userName,
+				   u.id,
+       			   b.blogTitle,
+     			   b.logoFile
+			from blog b, users u
+			where b.id = u.id
+			and u.id = #{id}
+			
+		]]>
+	</select>
 </mapper>

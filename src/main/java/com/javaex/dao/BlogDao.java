@@ -18,4 +18,11 @@ public class BlogDao {
 		
 		return sqlSession.selectOne("blog.getBlog", id);
 	}
+	
+////내 블로그 가져오기(id)/////////////////////////////////////////////////////////////////////////////////////
+	public BlogVo getMyBlog(String id) {
+		System.out.println("BlogDao>getMyBlog");
+		
+		return sqlSession.selectOne("blog.getMyBlog", id);
+	}
 }

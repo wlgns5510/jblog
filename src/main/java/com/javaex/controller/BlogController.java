@@ -32,11 +32,15 @@ public class BlogController {
 		return "blog/blog-main";
 	}
 	
-////내 블로그 관리
-	@RequestMapping(value="/blog-admin-basic", method = {RequestMethod.GET, RequestMethod.POST})
-	public String myBlog() {
+////내 블로그 관리///////////////////////////////////////////////////////////////////////////////
+	@RequestMapping(value="/{id}-admin-basic", method = {RequestMethod.GET, RequestMethod.POST})
+	public String myBlog(@PathVariable("id")String id, Model model) {
 		System.out.println("BlogController>myBlog");
 		
+		BlogVo myBlogVo = blogService.getMyBlog(id); 
+		System.out.println(myBlogVo);
+		
+		model.addAttribute("myBlogVo", myBlogVo);
 		
 		return "blog/admin/blog-admin-basic";
 	}

@@ -19,10 +19,17 @@ public class BlogService {
 		 System.out.println("BlogService>getBlog");
 	 
 		 BlogVo blogVo = blogDao.getBlog(id);
-		 System.out.println("blogService: " + blogVo);
 	 
 	 	 return blogVo; 
 	 }
-	 
+
+////내 블로그 가져오기(id)/////////////////////////////////////////////////////////////////////////////////////
+	 public BlogVo getMyBlog(String id) {
+		 System.out.println("BlogService>getMyBlog");
+		 
+		 BlogVo blogVo = blogDao.getMyBlog(id);
+		 
+		 return blogVo;
+	 }
 
 }
