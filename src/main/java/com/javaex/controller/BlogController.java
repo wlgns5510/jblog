@@ -38,10 +38,15 @@ public class BlogController {
 		System.out.println("BlogController>myBlog");
 		
 		BlogVo myBlogVo = blogService.getMyBlog(id); 
-		System.out.println(myBlogVo);
+		System.out.println("myBlogVo: " + myBlogVo);
 		
 		model.addAttribute("myBlogVo", myBlogVo);
 		
 		return "blog/admin/blog-admin-basic";
+	}
+	
+///내 블로그 수정/////////////////////////////////////////////////////////////////////////////////////
+	public String BlogUpdate() {
+		return "";
 	}
 }

@@ -2,15 +2,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 		<div id="header" class="clearfix">
-			<c:choose>
-				<c:when test ="${authUser.id == blogVo.id}">
-					<h1><a href="">${blogVo.blogTitle}</a></h1>
-				</c:when>
-				
-				<c:when test ="${authUser.id == myBlogVo.id}">
-					<h1><a href="">${myBlogVo.blogTitle}</a></h1>
-				</c:when>
-			</c:choose>
+			<h1><a href="">${blogVo.blogTitle}</a></h1>
+			<h1><a href="">${myBlogVo.blogTitle}</a></h1>
 			
 			<ul class="clearfix">
 			
