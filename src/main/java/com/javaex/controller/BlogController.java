@@ -49,4 +49,9 @@ public class BlogController {
 	public String BlogUpdate() {
 		return "";
 	}
+	
+//내 블로그 로고바꾸끼
+	public String logoUpadate() {
+		return "";
+	}
 }
