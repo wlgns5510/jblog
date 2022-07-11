@@ -26,7 +26,7 @@
 			<!-- //admin-menu -->
 			
 			<div id="admin-content">
-				<form action="" method="post" >
+				<form action="update" method="post" >
 	 		      	<table id="admin-basic">
 	 		      		<colgroup>
 							<col style="width: 100px;">

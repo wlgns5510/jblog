@@ -33,7 +33,7 @@ public class BlogController {
 	}
 	
 ////내 블로그 관리///////////////////////////////////////////////////////////////////////////////
-	@RequestMapping(value="/{id}-admin-basic", method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value="/{id}/admin/basic", method = {RequestMethod.GET, RequestMethod.POST})
 	public String myBlog(@PathVariable("id")String id, Model model) {
 		System.out.println("BlogController>myBlog");
 		
@@ -45,13 +45,19 @@ public class BlogController {
 		return "blog/admin/blog-admin-basic";
 	}
 	
-///내 블로그 수정/////////////////////////////////////////////////////////////////////////////////////
-	public String BlogUpdate() {
+///로고 이미지 저장
+	
+	
+////내 블로그 수정/////////////////////////////////////////////////////////////////////////////////////
+	@RequestMapping(value="/{id}/admin/update", method = {RequestMethod.GET, RequestMethod.POST})
+	public String BlogUpdate(BlogVo blogVo) {
+		System.out.println("BlogController>BlogUpdate");
+		
+		blogService.update(blogVo);
+		
+		
 		return "";
 	}
 	
-//내 블로그 로고바꾸끼
-	public String logoUpadate() {
-		return "";
-	}
+
 }

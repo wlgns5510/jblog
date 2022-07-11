@@ -31,5 +31,17 @@ public class BlogService {
 		 
 		 return blogVo;
 	 }
-
+	 
+///내 블로그 수정////////////////////////////////////////////////////////////////////////////
+	 public int update(BlogVo blogVo) {
+		 System.out.println("BlogService>update");
+		 blogVo.setLogoFile("sf");
+		 
+		 
+		 
+		 
+		 int count = blogDao.update(blogVo);
+		 
+		 return count;
+	 }
 }
