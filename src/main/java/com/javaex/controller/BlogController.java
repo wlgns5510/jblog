@@ -3,9 +3,12 @@ package com.javaex.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.javaex.service.BlogService;
 import com.javaex.vo.BlogVo;
@@ -45,16 +48,13 @@ public class BlogController {
 		return "blog/admin/blog-admin-basic";
 	}
 	
-///로고 이미지 저장
-	
 	
 ////내 블로그 수정/////////////////////////////////////////////////////////////////////////////////////
 	@RequestMapping(value="/{id}/admin/update", method = {RequestMethod.GET, RequestMethod.POST})
-	public String BlogUpdate(BlogVo blogVo) {
+	public String BlogUpdate(@PathVariable("id")String id, @RequestParam("file") MultipartFile file, BlogVo blogVo) {
 		System.out.println("BlogController>BlogUpdate");
-		
-		blogService.update(blogVo);
-		
+
+		blogService.update(file, blogVo);
 		
 		return "";
 	}
